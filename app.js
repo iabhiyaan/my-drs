@@ -58,9 +58,9 @@ function getGitCommits(date = "") {
     const cleanStr = commit.replaceAll(getRegexExp(), "");
     message += `- ${cleanStr} \n`;
   });
-
   copyToClipboard(message)
     .then((res) => {
+      alert("Copied to clipboard")
       console.log("Copied to clipboard");
     })
     .catch((err) => {
