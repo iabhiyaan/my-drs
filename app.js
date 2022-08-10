@@ -47,6 +47,8 @@ function getGitCommits(date = "") {
     const trimmedStr = commit.trim?.();
     if (trimmedStr?.length < 15) {
       lessThanTenChars.push(i);
+    } else if(trimmedStr.includes('working')) {
+      lessThanTenChars.push(i);
     }
   });
 
