@@ -31,7 +31,7 @@ function getGitCommits(date = "") {
     .querySelectorAll("li")
     .forEach((node) => {
       const commitMessage = node
-        .querySelector('.avatar-cell a[href="/iabhiyaan1')
+        .querySelector('.avatar-cell a[href="/abhiyan.ag')
         ?.parentNode.nextElementSibling.querySelector(
           ".commit-row-message"
         ).innerText;
