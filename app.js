@@ -47,7 +47,7 @@ function getGitCommits(date = "") {
     const trimmedStr = commit.trim?.();
     if (trimmedStr?.length < 15) {
       lessThanTenChars.push(i);
-    } else if(trimmedStr.includes('working')) {
+    } else if (trimmedStr.includes("working")) {
       lessThanTenChars.push(i);
     }
   });
@@ -60,9 +60,10 @@ function getGitCommits(date = "") {
     const cleanStr = commit.replaceAll(getRegexExp(), "");
     message += `- ${cleanStr} \n`;
   });
+  
   copyToClipboard(message)
     .then((res) => {
-      alert("Copied to clipboard")
+      alert("Copied to clipboard");
       console.log("Copied to clipboard");
     })
     .catch((err) => {
@@ -75,7 +76,8 @@ function getGitCommits(date = "") {
 getGitCommits();
 
 function copyToClipboard(str) {
-  if (navigator && navigator.clipboard && navigator.clipboard.writeText)
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
     return navigator.clipboard.writeText(str);
+  }
   return Promise.reject("The Clipboard API is not available.");
 }
